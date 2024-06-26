@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 50px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+ol {
+    margin-left: 20px;
+}
+
+ul {
+    margin-left: 20px;
+    list-style-type: disc; /* Default style, you can change it to circle, square, etc. */
+}
+
+li {
+    margin-bottom: 5px;
+}
