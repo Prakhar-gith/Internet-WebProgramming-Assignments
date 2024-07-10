@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <h1>Student Registration Form</h1>
+    <form>
+        <!-- Personal Information Section -->
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required><br><br>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}"><br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+        </fieldset>
+
+        <!-- Academic Information Section -->
+        <fieldset>
+            <legend>Academic Information</legend>
+            <label for="course">Course:</label>
+            <input type="text" id="course" name="course" required><br><br>
+
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" required><br><br>
+
+            <label for="previousSchool">Previous School:</label>
+            <input type="text" id="previousSchool" name="previousSchool" required><br><br>
+
+            <label for="graduationYear">Year of Graduation:</label>
+            <input type="number" id="graduationYear" name="graduationYear" required><br><br>
+        </fieldset>
+
+        <!-- Preferences Section -->
+        <fieldset>
+            <legend>Preferences</legend>
+            <label>Mode of Study:</label><br>
+            <input type="radio" id="fullTime" name="studyMode" value="fullTime" required>
+            <label for="fullTime">Full-time</label><br>
+            <input type="radio" id="partTime" name="studyMode" value="partTime" required>
+            <label for="partTime">Part-time</label><br><br>
+
+            <label for="hobbies">Hobbies:</label><br>
+            <input type="checkbox" id="sports" name="hobbies" value="Sports">
+            <label for="sports">Sports</label><br>
+            <input type="checkbox" id="music" name="hobbies" value="Music">
+            <label for="music">Music</label><br>
+            <input type="checkbox" id="reading" name="hobbies" value="Reading">
+            <label for="reading">Reading</label><br><br>
+        </fieldset>
+
+        <!-- PAT Registration Section -->
+        <fieldset>
+            <legend>Placement and Training (PAT) Registration</legend>
+            <label for="patCourse">Course for PAT:</label>
+            <input type="text" id="patCourse" name="patCourse" required><br><br>
+
+            <label for="patDepartment">Department for PAT:</label>
+            <input type="text" id="patDepartment" name="patDepartment" required><br><br>
+
+            <label for="patYear">Year of Joining PAT:</label>
+            <input type="number" id="patYear" name="patYear" required><br><br>
+
+            <label for="internship">Interested in Internship:</label><br>
+            <input type="radio" id="internshipYes" name="internship" value="yes" required>
+            <label for="internshipYes">Yes</label><br>
+            <input type="radio" id="internshipNo" name="internship" value="no" required>
+            <label for="internshipNo">No</label><br><br>
+
+            <label for="patPreferences">Preferences for PAT:</label><br>
+            <input type="checkbox" id="workshops" name="patPreferences" value="Workshops">
+            <label for="workshops">Workshops</label><br>
+            <input type="checkbox" id="seminars" name="patPreferences" value="Seminars">
+            <label for="seminars">Seminars</label><br>
+            <input type="checkbox" id="projects" name="patPreferences" value="Projects">
+            <label for="projects">Projects</label><br><br>
+        </fieldset>
+
+        <!-- Submit and Reset Buttons -->
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
