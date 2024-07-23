@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        #taskManager {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            color: #343a40;
+            text-align: center;
+        }
+        #taskInput {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+        #addTaskButton {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+        }
+        #addTaskButton:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background-color: #e9ecef;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .deleteButton {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+        .deleteButton:hover {
+            background-color: #c82333;
+        }
+        #summaryButton {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+        #summaryButton:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div id="taskManager">
+    <h1>Task Manager</h1>
+    <input type="text" id="taskInput" placeholder="Enter your task">
+    <button id="addTaskButton">Add Task</button>
+    <ul id="taskList"></ul>
+    <button id="summaryButton">Go to Summary</button>
+</div>
+
+<script>
+    const taskInput = document.getElementById('taskInput');
+    const addTaskButton = document.getElementById('addTaskButton');
+    const taskList = document.getElementById('taskList');
+    const summaryButton = document.getElementById('summaryButton');
+
+    function addTask() {
+        const taskText = taskInput.value;
+        if (taskText === '') {
+            window.alert('Please enter a task.');
+            return;
+        }
+
+        const li = document.createElement('li');
+        li.textContent = taskText;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.className = 'deleteButton';
+        deleteButton.onclick = function() {
+            taskList.removeChild(li);
+        };
+
+        li.appendChild(deleteButton);
+        taskList.appendChild(li);
+
+        taskInput.value = '';
+    }
+
+    addTaskButton.addEventListener('click', addTask);
+    summaryButton.addEventListener('click', function() {
+        window.location.href = 'summary.html';
+    });
+
+    window.alert('Welcome to the Task Manager!');
+
+    const range = document.createRange();
+    const taskManagerDiv = document.getElementById('taskManager');
+    range.selectNode(taskManagerDiv);
+    console.log(range);
+
+    const selection = window.getSelection();
+    console.log(selection);
+
+    taskManagerDiv.style.color = '#495057';
+
+    console.log(window.location.href);
+
+    taskInput.addEventListener('focus', function(event) {
+        taskInput.style.borderColor = '#007bff';
+    });
+
+    taskInput.addEventListener('blur', function(event) {
+        taskInput.style.borderColor = '#ced4da';
+    });
+
+    const listItems = document.querySelectorAll('li');
+    listItems.forEach(item => {
+        console.log(item.textContent);
+    });
+
+    const deleteButtons = document.getElementsByClassName('deleteButton');
+    for (let i = 0; i < deleteButtons.length; i++) {
+        console.log(deleteButtons[i].textContent);
+    }
+</script>
+
+</body>
+</html>
